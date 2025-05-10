@@ -16,5 +16,5 @@ A: Top-down starts from the top of the problem by dividing the problem into subp
 # Question 4
 Q: What are the disadvantages of Memoization?
 
-A: 
+A: It has disadvantages because of recursion, which occupies more memory in the call stack.
 
