@@ -1,20 +1,46 @@
-# Snippet 1: Fibonacci Numbers Memoization Approach
-Given a positive integer n, the task is to find the nth Fibonacci number.The Fibonacci sequence is a sequence where the next term is the sum of the previous two terms. The first two terms of the Fibonacci sequence are 0 followed by 1. The Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21
-In the Top-down approach, a function with 2 parameters, n and memo table, is created. If n is in the table, function returns memo[n] and if n is less or equal to 1, function returns n which is 1 or 0. Fibonacci of previous 2 numbers is calculated and stored in a memo array. 
+# Problem 1: Fibonacci Numbers 
+Problem Statement
+Given a positive integer n, the task is to find the nth Fibonacci number.The Fibonacci sequence is a sequence where the next term is the sum of the previous two terms. The first two terms of the Fibonacci sequence are 0 followed by 1. The Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+
+Example:
+
+Input: n = 2   
+Output: 1   
+Explanation: 1 is the 2nd number of Fibonacci series.
+
+Input: n = 5   
+Output: 5   
+Explanation: 5 is the 5th number of Fibonacci series.
+
+## 🔹 Hints
+
+Hint 1: 
+
+Hint 2:
+
+## 🔹 Brute Force Idea
+
+We can use recursion to solve this problem because any Fibonacci number n depends on previous two Fibonacci numbers. Therefore, this approach repeatedly breaks down the problem until it reaches the base cases.
+
 <pre>
-  def fib(n, memo={}):
-    if n in memo:
-        return memo[n]
+def nth_fibonacci(n):
     if n <= 1:
         return n
-    memo[n] = fib(n-1, memo) + fib(n-2, memo)
-    return memo[n]
-print(fib(10))  # Output: 55
+      
+    return nth_fibonacci(n - 1) + nth_fibonacci(n - 2)
+
+n = 5
+result = nth_fibonacci(n)
+print(result)
 </pre>
 
-# Snippet 2: Fibonacci Numbers Tabulation Approach
-Given a positive integer n, the task is to find the nth Fibonacci number.The Fibonacci sequence is a sequence where the next term is the sum of the previous two terms. The first two terms of the Fibonacci sequence are 0 followed by 1. The Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21
-In the Bottom-up approach, a function with 1 parameter, n, is created. If n is less or equal to 1, the function returns n which is 1 or 0. Then, we create an array with 0 and 1 and iterate from 2 till n+1 so that we go from bottom to up. After recursive calculation of Fibonacci numbers we append them to an array and return the array.
+## 🔹 Optimized Idea
+
+We can optimize the idea by adding Dynamic programming. Tabulation approach iteratively builds up the solution by calculating Fibonacci numbers from the bottom up. In the this approach, a function with 1 parameter, n, is created. If n is less or equal to 1, the function returns n which is 1 or 0. Then, we create an array with 0 and 1 and iterate from 2 till n+1 so that we go from bottom to up. After recursive calculation of Fibonacci numbers we append them to an array and return the array.
+
+Time Complexity: O(n), the loop runs from 2 to n, performing a constant amount of work per iteration.
+
+## 🔹 Code Fragment
 <pre>
 def fib(n):
     if n <= 1:
@@ -26,7 +52,54 @@ def fib(n):
 print(fib(10))  # Output: 55
 </pre>
 
+# Problem 2: 
+Problem Statement
+There are n stairs, and a person standing at the bottom wants to climb stairs to reach the top. The person can climb either 1 stair or 2 stairs at a time, the task is to count the number of ways that a person can reach at the top. 
+
+Input: n = 1                                                                                                                            
+Output: 1   
+Explanation: There is only one way to climb 1 stair.     
+
+Input: n = 2  
+Output: 2   
+Explanation: There are two ways to reach 2th stair: {1, 1} and {2}.  
+
+Input: n = 4   
+Output: 5   
+Explanation: There are five ways to reach 4th stair: {1, 1, 1, 1}, {1, 1, 2}, {2, 1, 1}, {1, 2, 1} and {2, 2}. 
+
+## 🔹 Hints
+
+Hint 1: 
+
+Hint 2:
+
+## 🔹 Brute Force Idea
+
+This problem is just like Fibonacci numbers. A person can reach nth stair either from (n-1)th stair or (n-2)th stair. Thus, for each stair n, we calculate the number of ways to reach the (n-1)th and (n-2)th stairs, and add them to get the total number of ways to reach the nth stair. This gives us the following recurrence relation:   
+countWays(n) = countWays(n-1) + countWays(n-2)
+
+## 🔹 Optimized Idea
+
+We can optimize the idea by adding Dynamic programming. Tabulation approach iteratively builds up the solution by calculating Fibonacci numbers from the bottom up. In the this approach, a function with 1 parameter, n, is created. If n is less or equal to 1, the function returns n which is 1 or 0. Then, we create an array with 0 and 1 and iterate from 2 till n+1 so that we go from bottom to up. After recursive calculation of Fibonacci numbers we append them to an array and return the array.
+
+Time Complexity: O(n), the loop runs from 2 to n, performing a constant amount of work per iteration.
+
+## 🔹 Code Fragment
+<pre>
+def fib(n):
+    if n <= 1:
+        return n
+    dp = [0, 1]
+    for i in range(2, n+1):
+        dp.append(dp[i-1] + dp[i-2])
+    return dp[n]
+print(fib(10))  # Output: 55
+</pre>
+
+
 # Snippet 3: Climbing stairs with Tabulation approach
+
 There are n stairs, and a person standing at the bottom wants to climb stairs to reach the top. The person can climb either 1 stair or 2 stairs at a time, the task is to count the number of ways that a person can reach at the top.
 In the Bottom-up approach, a function with 1 parameter, n, is created. An array of length n+1, filled with 0s, is created and the first 2 elements are set to 1. After, we iterate through the array from the second element to the end and the elements in the array are replaced with the sum of previous 2 elements.
 <pre>
