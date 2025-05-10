@@ -55,6 +55,11 @@ There are many Dynamic programming algorithms. The most popular algorithms:
 
 ## Takeways
 
+- To save duplication of effort, Dynamic Programming divides problems into smaller subproblems, solves each one once, and stores the solutions.
+
+- Top-down approach recursively solves subproblems and cache their results. While bottom-up solves subproblems first and then use their solutions to solve larger problems. 
+
+- You can use DP when your code have overlapping subproblems and Optimal Substructure.
 
 
 
