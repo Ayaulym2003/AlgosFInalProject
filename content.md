@@ -15,60 +15,51 @@ The way dynamic programming operates is by decomposing complicated issues into s
 There are two methods for achieving dynamic programming:
 
 ### Top-down approach (Memoization)
-The top-down approach uses recursion and caching methods. It recursively solves subproblems and cache their results. But it has disadvantage because of recursion, which occupies more memory in call stack. 
+The top-down approach uses recursion and caching methods. It recursively solves subproblems and cache their results. But it has disadvantages because of recursion, which occupies more memory in the call stack. 
 
 ### Bottom-up approach (Tabulation)
-The bottom-up approach iteratively goes from bottom to up, that is, it solves subproblems first and then use their solutions to solve larger problems. 
+The bottom-up approach iteratively goes from bottom to up, that is, it solves subproblems first and then uses their solutions to solve larger problems. 
 
 ## Suitability
-There are two main signs that user can solve the problem with Dynamic Programming. When subproblems overlap and when there is optimal substructure.
+There are two main signs that users can solve the problem with Dynamic Programming. When subproblems overlap and when there is optimal substructure.
 
 ### Subproblem Overlapping 
-We refer to subproblems as overlapping when the solutions to the same subproblem are required more than once in order to resolve the primary issue. In this sign, solutions of subproblems are put into table so the users can reuse them instead of recalculating. 
+We refer to subproblems as overlapping when the solutions to the same subproblem are required more than once in order to resolve the primary issue. In this sign, solutions of subproblems are put into the table so the users can reuse them instead of recalculating. 
 
 ### Optimal Substructure 
-You can use DP if you can find best answer to the problem by taking best solutions of subproblems and putting them together. We see this when we have to find shortest path between two points. If we find path between p and w and w and t, then we can put them together and find distance between p to t.
+You can use DP if you can find the best answer to the problem by taking the best solutions of subproblems and putting them together. We see this when we have to find the shortest path between two points. If we find the path between p and w and w and t, then we can put them together and find the distance between p to t.
 
 ## DP algorithms
 There are many Dynamic programming algorithms. The most popular algorithms:
 
 1. Greedy algorithms.
 
-   We look for a local solution to find global answer. By looking for the best answers to the subproblems and merging the results of these subproblems, the approach finds the best solution to a given issue. 
-3. Floyd-Warshall algorithm.
+   We look for a local solution to find a global answer. By looking for the best answers to the subproblems and merging the results of these subproblems, the approach finds the best solution to a given issue. 
+2. Floyd-Warshall algorithm.
 
    This Algorithm is used to find shortest pathways. The possible paths through the graph for each pair of vertices are compared by this program. To find the shortest distance between two vertices in a chart, it iteratively optimizes an estimate of the shortest path between them. The pathways can be reconstructed with minor adjustments. 
-5. Bellman Ford algorithm.
+3. Bellman Ford algorithm.
 
    Determines the shortest route from a particular source vertex to every other weighted digraph vertices. 
 
 ## Examples 
-1. Fibbonacci numbers.
+1. Fibonacci numbers.
 
-   F(n)=F(n−1)+F(n−2). Those, we can find the sequence by finding the sum of previous two numbers and recursively iterating through the values of n. 
-3. The optimal Strategy of a game.
+   F(n)=F(n−1)+F(n−2). We can find the sequence by finding the sum of previous two numbers and recursively iterating through the values of n. 
+2. The optimal Strategy of a game.
 
    We solve smaller subgames first using dynamic programming, and then we build up to determine the highest total you can achieve if you both play flawlessly.
-5. Longest common subsequence.
+3. Longest common subsequence.
 
    In order to determine the length of the longest common subsequence, we construct a table in which each cell has the best response for smaller segments of the strings. We then gradually fill it up.
 
-## Takeways
+## Takeaways
 
 - To save duplication of effort, Dynamic Programming divides problems into smaller subproblems, solves each one once, and stores the solutions.
 
 - Top-down approach recursively solves subproblems and cache their results. While bottom-up solves subproblems first and then use their solutions to solve larger problems. 
 
-- You can use DP when your code have overlapping subproblems and Optimal Substructure.
-
-
-
-
-
-
-
-
-
+- You can use DP when your code has overlapping subproblems and Optimal Substructure.
 
 
 
