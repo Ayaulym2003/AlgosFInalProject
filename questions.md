@@ -13,3 +13,8 @@ Q: What is the main diffetence between Top-down and Bottom-up approach?
 
 A: Top-down starts from the top of the problem by dividing the problem into subproblems and solving them. Whereas Bottom-up approach starts from bottom, the smallest part of the problem and builds up to the main problem iteratively, storing results in a table.
 
+# Question 4
+Q: What are the disadvantages of Memoization?
+
+A: 
+
