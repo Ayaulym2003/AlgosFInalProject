@@ -29,6 +29,9 @@ We refer to subproblems as overlapping when the solutions to the same subproblem
 ### Optimal Substructure 
 You can use DP if you can find the best answer to the problem by taking the best solutions of subproblems and putting them together. We see this when we have to find the shortest path between two points. If we find the path between p and w and w and t, then we can put them together and find the distance between p to t.
 
+## Time and space complexities
+The time complexity depends on the number of subproblems and how often they are solved. In general, it’s proportional to the size of the problem. Space complexity depends on how many subproblems need to be stored. In some cases, DP solutions require O(n) or O(n^2) space.
+
 ## DP algorithms
 There are many Dynamic programming algorithms. The most popular algorithms:
 
