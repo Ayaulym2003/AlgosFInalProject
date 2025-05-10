@@ -163,7 +163,7 @@ if __name__ == "__main__":
 </pre>
 
 
-# Snippet 8:Longest Common Subsequence (LCS)
+# Snippet 8: Longest Common Subsequence (LCS)
 Given two strings, s1 and s2, the task is to find the length of the Longest Common Subsequence. If there is no common subsequence, return 0. A subsequence is a string generated from the original string by deleting 0 or more characters, without changing the relative order of the remaining characters.
 
 
